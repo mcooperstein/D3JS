@@ -12,11 +12,5 @@ h1 {
     background-color: #c7d9d9;
     display: block;
     margin: auto;
+    border: 10px double #a64c38;
 }
-
-
-/*
-.bar {
-    fill: #115d8c;
-}
-*/

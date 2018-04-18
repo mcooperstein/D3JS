@@ -52,6 +52,7 @@ let barChart = svg.selectAll('rect')
         let translate = [barWidth * i, 0];
         return `translate(${translate})`;
     })
+    .attr('fill', '#115d8c')
 
 let text = svg.selectAll("text")
     .data(dataSet)
@@ -61,7 +62,7 @@ let text = svg.selectAll("text")
         return d;
     })
     .attr("y", function (d, i) {
-        return svgHeight - d - 5;
+        return svgHeight - d - 3;
     })
     .attr("x", function (d, i) {
         return barWidth * i;
