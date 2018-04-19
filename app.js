@@ -82,7 +82,7 @@ let barWidth = (svgWidth / dataSet.length);
 let svg = d3.select('svg').attr('width', svgWidth).attr('height', svgHeight)
 
 let yScale = d3.scaleLinear()
-    .domain([0, d3.max(dataSet)])
+    .domain([0, d3.max(dataSet) * 1.25])
     .range([0, svgHeight])
 
 
@@ -103,7 +103,7 @@ let barChart = svg.selectAll('rect')
     })
     .attr('fill', '#115d8c')
 
-/*
+
 let text = svg.selectAll("text")
     .data(dataSet)
     .enter()
@@ -112,10 +112,9 @@ let text = svg.selectAll("text")
         return d;
     })
     .attr("y", function (d, i) {
-        return svgHeight - yScale(d);
+        return svgHeight - yScale(d) - 3;
     })
     .attr("x", function (d, i) {
         return barWidth * i;
     })
     .attr("fill", "#a64c38");
-*/
