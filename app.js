@@ -27,7 +27,7 @@ d3.select('body')
 */
 
 // Lesson 3
-
+/*
 let dataSet = [80, 100, 34, 99, 88, 54, 175, 130, 67];
 
 let svgWidth = 500;
@@ -68,3 +68,54 @@ let text = svg.selectAll("text")
         return barWidth * i;
     })
     .attr("fill", "#a64c38");
+*/
+
+// Lesson 4 Scales
+
+let dataSet = [1, 2, 3, 4, 5];
+
+let svgWidth = 500;
+let svgHeight = 300;
+let barPadding = 5;
+let barWidth = (svgWidth / dataSet.length);
+
+let svg = d3.select('svg').attr('width', svgWidth).attr('height', svgHeight)
+
+let yScale = d3.scaleLinear()
+    .domain([0, d3.max(dataSet)])
+    .range([0, svgHeight])
+
+
+let barChart = svg.selectAll('rect')
+    .data(dataSet)
+    .enter()
+    .append('rect')
+    .attr('y', function (d) {
+        return svgHeight - yScale(d);
+    })
+    .attr('height', function (d) {
+        return yScale(d);
+    })
+    .attr('width', barWidth - barPadding)
+    .attr('transform', function (d, i) {
+        let translate = [barWidth * i, 0];
+        return `translate(${translate})`;
+    })
+    .attr('fill', '#115d8c')
+
+/*
+let text = svg.selectAll("text")
+    .data(dataSet)
+    .enter()
+    .append("text")
+    .text(function (d) {
+        return d;
+    })
+    .attr("y", function (d, i) {
+        return svgHeight - yScale(d);
+    })
+    .attr("x", function (d, i) {
+        return barWidth * i;
+    })
+    .attr("fill", "#a64c38");
+*/
