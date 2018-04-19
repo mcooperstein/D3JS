@@ -70,8 +70,9 @@ let text = svg.selectAll("text")
     .attr("fill", "#a64c38");
 */
 
-// Lesson 4 Scales
+// Lesson Scales
 
+/*
 let dataSet = [1, 2, 3, 4, 5];
 
 let svgWidth = 500;
@@ -118,3 +119,43 @@ let text = svg.selectAll("text")
         return barWidth * i;
     })
     .attr("fill", "#a64c38");
+*/
+
+// Lesson Axis
+
+var data = [80, 70, 56, 120, 100, 120, 40, 150];
+
+var svgWidth = 400;
+var svgHeight = 300;
+
+var svg = d3.select('#axis')
+    .attr('width', svgWidth)
+    .attr('height', svgHeight);
+
+var xScale = d3.scaleLinear()
+    .domain([0, d3.max(data)])
+    .range([0, svgWidth]);
+
+var yScale = d3.scaleLinear()
+    .domain([-10, d3.max(data)])
+    .range([svgHeight, 0]);
+
+var xAxis = d3.axisBottom().scale(xScale);
+
+var yAxis = d3.axisLeft().scale(yScale);
+
+svg.append('g')
+    .attr('transform', 'translate(50,0)')
+    .call(yAxis);
+
+svg.append('g')
+    .attr('transform', 'translate(50,280)')
+    .call(xAxis);
+
+/*
+var xAxisTranslate = svgHeight - 20;
+
+svg.append('g')
+    .attr('transform', `translate(50,${xAxisTranslate})`)
+    .call(xAxis);
+*/
