@@ -8,7 +8,8 @@ h1 {
     text-align: center;
 }
 
-.bar-chart {
+.bar-chart,
+#elements {
     background-color: #c7d9d9;
     display: block;
     margin: auto;

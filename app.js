@@ -122,7 +122,7 @@ let text = svg.selectAll("text")
 */
 
 // Lesson Axis
-
+/*
 var data = [80, 70, 56, 120, 100, 120, 40, 150];
 
 var svgWidth = 400;
@@ -151,11 +151,47 @@ svg.append('g')
 svg.append('g')
     .attr('transform', 'translate(50,280)')
     .call(xAxis);
-
-/*
-var xAxisTranslate = svgHeight - 20;
-
-svg.append('g')
-    .attr('transform', `translate(50,${xAxisTranslate})`)
-    .call(xAxis);
 */
+
+// SVG Shapes
+
+var svgWidth = 500;
+var svgHeight = 400;
+
+var svg = d3.select('#elements')
+    .attr('width', svgWidth)
+    .attr('height', svgHeight)
+
+var line = svg.append('line')
+    .attr("x1", 100)
+    .attr("x2", 400)
+    .attr("y1", 300)
+    .attr("y2", 300)
+    .attr('stroke', 'red')
+    .attr('stroke-width', 5)
+
+var rect = svg.append('rect')
+    .attr('x', 100)
+    .attr('y', 100)
+    .attr('width', 100)
+    .attr('height', 80)
+    .attr('fill', 'blue')
+
+var rect2 = svg.append('rect')
+    .attr('x', 300)
+    .attr('y', 100)
+    .attr('width', 100)
+    .attr('height', 80)
+    .attr('fill', 'blue')
+
+var circle = svg.append('circle')
+    .attr('cx', 150)
+    .attr('cy', 140)
+    .attr('r', 40)
+    .attr('fill', 'white')
+
+var circle2 = svg.append('circle')
+    .attr('cx', 350)
+    .attr('cy', 140)
+    .attr('r', 40)
+    .attr('fill', 'white')
