@@ -4,7 +4,8 @@ body {
     padding: 0;
 }
 
-h1 {
+h1,
+h3 {
     text-align: center;
 }
 
@@ -18,5 +19,10 @@ h1 {
 
 .pie-chart {
     display: block;
-    margin: 50px auto;
+    margin: 40px auto;
+}
+
+.line-chart {
+    display: block;
+    margin: auto;
 }
